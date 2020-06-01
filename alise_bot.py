@@ -11,6 +11,7 @@ def dialog(text):
 
 
 	r = requests.get(url,headers = headers, params = params)
+	
 
 	responce = r.json()['result']['fulfillment']['speech']
 
@@ -22,5 +23,10 @@ def dialog(text):
 if __name__ == '__main__':
 
 	while True:
-		dialog(input())
+		c = dialog(input())
+		if c:
+			print(c)
+		else:
+			print('Я тебя не понял')
+
 
